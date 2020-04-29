@@ -1,13 +1,15 @@
 var express = require('express');
 var app = express();
 var serv = require('http').Server(app);
+const PORT = process.env.PORT || 3000;
+
 
 app.get('/',function(req, res) {
     res.sendFile(__dirname + '/client/index.html');
 });
 app.use('/client',express.static(__dirname + '/client'));
 
-serv.listen();
+serv.listen(PORT, () => console.log(`Listening on ${PORT}`));
 console.log('server started')
 
 
