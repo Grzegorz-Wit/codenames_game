@@ -1,11 +1,11 @@
-var express = require('express');
+import express, { static } from 'express';
 var app = express();
 var serv = require('http').Server(app);
 
 app.get('/',function(req, res) {
     res.sendFile(__dirname + '/client/index.html');
 });
-app.use('/client',express.static(__dirname + '/client'));
+app.use('/client',static(__dirname + '/client'));
 
 serv.listen();
 console.log('server started')
