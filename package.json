@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {
+  "dependencies": {`"express":"*",`
 
-	"express: " "*",
-	"body-parser: " "*"	
+`"body-parser":"*",`
+
+`"bcrypt": "^0.8.5"`
   },
   "devDependencies": {},
   "scripts": {
