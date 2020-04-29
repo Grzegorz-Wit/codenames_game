@@ -39,3 +39,13 @@ socket.on('ng', function() {
   cardsArray.forEach(card => card.setAttribute('class', 'card'))
 
 });
+
+socket.on('keys table', data => {
+  var cells = Array.from(document.getElementsByTagName('td'));
+  cells.forEach(cell => {
+    cell.setAttribute('class', data[cell.id-1])
+  })
+  });
+
+  var cells = Array.from(document.getElementsByTagName('td'));
+  console.log(cells[0])

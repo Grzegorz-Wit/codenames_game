@@ -87,7 +87,7 @@ p {
     color: blue;
 }
 
-td {
+table tr td {
     height: 50px;
     width: 50px;
     background-color: white;
@@ -96,4 +96,20 @@ td {
 
 button {
     font-size: 40px;
+}
+
+.red {
+    background-color: crimson;
+}
+
+.blue {
+    background-color: royalblue;
+}
+
+.innocent {
+    background-color: lemonchiffon;
+}
+
+.assassin {
+    background-color: black;
 }

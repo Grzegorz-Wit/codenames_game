@@ -63,6 +63,7 @@ io.sockets.on('connection', function(socket){
     socket.id = Math.random();
     SOCKET_LIST[socket.id] = socket;
     console.log('connected');
+    socket.emit('keys table', (keysArray));
     flippedCards.forEach(data => {
         socket.emit('response', {team: keysArray[data-1], id: data});
     });
@@ -80,9 +81,9 @@ io.sockets.on('connection', function(socket){
     socket.on('new game', (data) => {
         console.log('new game');
         keysArray = shuffle(keysArray);
-        console.log(keysArray);
         flippedCards = [];
         socket.broadcast.emit('ng');
+        socket.broadcast.emit('keys table', (keysArray))
     });
 });
 
