@@ -86,3 +86,14 @@ p {
 .key.blue {
     color: blue;
 }
+
+td {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border: solid 2px black;
+}
+
+button {
+    font-size: 40px;
+}
