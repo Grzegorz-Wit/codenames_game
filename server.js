@@ -7,7 +7,7 @@ app.get('/',function(req, res) {
 });
 app.use('/client',express.static(__dirname + '/client'));
 
-serv.listen();
+serv.listen('guarded-wildwood-06542.herokuapp.com');
 console.log('server started')
 
 
