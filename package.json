@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-	`"bcrypt": "^0.8.5",`
-	`"express: " "*",`
-	`"body-parser: " "*"`	
+	"bcrypt": "^0.8.5"
+	"express: " "*"
+	"body-parser: " "*"	
   },
   "devDependencies": {},
   "scripts": {
