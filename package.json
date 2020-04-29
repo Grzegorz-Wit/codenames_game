@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
 
-	"express: " "*"
+	"express: " "*",
 	"body-parser: " "*"	
   },
   "devDependencies": {},
