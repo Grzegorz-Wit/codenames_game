@@ -6,7 +6,6 @@ box-sizing: border-box;
 
 
 body {
-    max-width: 1000px;
     margin: 0 auto;
     background-image: url('/client/static/img/background.jpg');
 }
@@ -15,7 +14,7 @@ body {
     width: 100vh;
     height: 90vh;
     margin:  auto;
-    display: inline-flex;
+    /* display: inline-flex; */
     flex-wrap: wrap;
     perspective: 1000px;}
 
@@ -125,6 +124,10 @@ p {
     color: blue;
 }
 
+table {
+    margin: 0 auto;
+}
+
 table tr td {
     height: 50px;
     width: 50px;
@@ -151,3 +154,4 @@ button {
 .assassin {
     background-color: black;
 }
+

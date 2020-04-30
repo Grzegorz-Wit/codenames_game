@@ -7,7 +7,6 @@ var otherPlayer = 'blue';
 
 function queryCardData(self) {
   socket.emit('card', self.id);
-  console.log(self.id);
   self.removeEventListener('click', function() {queryCardData(card)});
 }
 
@@ -49,13 +48,15 @@ socket.on('ng', function() {
 
 
 socket.on('words for game', words => {
-  console.log(words);
   var allCardsArray = Array.from(document.getElementsByClassName('text-on-card'));
   var i = 0;
   allCardsArray.forEach(card => {
   card.innerHTML = words[i];
   i++;
 })});
+
+var cells = Array.from(document.getElementsByTagName('td'));
+
 
 socket.on('keys table', keys => {
   var cells = Array.from(document.getElementsByTagName('td'));
@@ -67,5 +68,7 @@ socket.on('keys table', keys => {
 
 var allCardsArray = Array.from(document.getElementsByClassName('text-on-card'));
 
-
+function showKeys() {
+  socket.emit('show keys', function() {})
+}
 
