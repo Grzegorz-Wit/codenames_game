@@ -11,6 +11,13 @@ function queryCardData(self) {
   self.removeEventListener('click', function() {queryCardData(card)});
 }
 
+let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+
+overlays.forEach(overlay => {
+  overlay.addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    socket.emit('new game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});  });
+});
 
 cardsArray = document.querySelectorAll('div.card');
 document.getElementById('output').innerHTML = (player + ' team guessing').fontcolor(player);
@@ -40,12 +47,25 @@ socket.on('ng', function() {
 
 });
 
-socket.on('keys table', data => {
+
+socket.on('words for game', words => {
+  console.log(words);
+  var allCardsArray = Array.from(document.getElementsByClassName('text-on-card'));
+  var i = 0;
+  allCardsArray.forEach(card => {
+  card.innerHTML = words[i];
+  i++;
+})});
+
+socket.on('keys table', keys => {
   var cells = Array.from(document.getElementsByTagName('td'));
   cells.forEach(cell => {
-    cell.setAttribute('class', data[cell.id-1])
+    cell.setAttribute('class', keys[cell.id-1])
   })
   });
 
-  var cells = Array.from(document.getElementsByTagName('td'));
-  console.log(cells[0])
+
+var allCardsArray = Array.from(document.getElementsByClassName('text-on-card'));
+
+
+

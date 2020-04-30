@@ -29,6 +29,35 @@ body {
 
 }
 
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: #000000;
+    cursor: pointer;
+  }
+
+.overlay-text.visible {
+display: flex;
+flex-direction: column;
+animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+from {
+    font-size: 0;
+}
+to {
+    font-size: 10em;
+}
+}
+
 .key {
     width: 100vh;
     text-align: center;
@@ -42,6 +71,15 @@ body {
     transform-style: preserve-3d;
     transition: transform .5s;
 }
+
+.text-on-card {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 20px;
+  }
 
 .card:hover {
     cursor: pointer;
