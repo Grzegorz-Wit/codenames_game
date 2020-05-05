@@ -98,11 +98,10 @@ io.sockets.on('connection', function(socket){
         flippedCards = [];
         socket.broadcast.emit('words for game', (wordsArray));
         socket.broadcast.emit('ng');
-        // socket.broadcast.emit('keys table', (keysArray));
 
     socket.on('show keys', function() {
         socket.emit('keys table', (keysArray));
-    })    
+    });    
     });
 });
 

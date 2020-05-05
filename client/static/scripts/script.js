@@ -47,9 +47,7 @@ function ng() {
 
 socket.on('ng', function() {
   cardsArray.forEach(card => card.setAttribute('class', 'card'))
-  // var cells = Array.from(document.getElementsByTagName('td'));
-  // cells.forEach(cell => {
-  //   cell.setAttribute('class', 'none')
+
 
 });
 

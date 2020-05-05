@@ -9,130 +9,136 @@
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 </head>
 <body>
-    <section class="content">
+    <div class="content">
         <div class="overlay-text visible">
-            Click to Start
+            Kliknij by dołączyć
           </div>
-        <div class="key">
-            <button onclick="newGame()">New Game</button>
+        <div class="team">
+            <button onclick="newGame()">Nowa Gra</button>
             <p id="output"></p>
         </div>
-    <section id="main" class="window">
-        <div id="1" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="2" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="3" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="4" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="5" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="6" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="7" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="8" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="9" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="10" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="11" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="12" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="13" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="14" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="15" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="16" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="17" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="18" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="19" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="20" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="21" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="22" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="23" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="24" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-        <div id="25" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
-            <div class="text-on-card"></div>
-            <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
-            <table>
+        <div id="main" class="game_window">
+            <div id="1" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="2" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="3" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="4" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="5" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="6" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="7" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="8" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="9" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="10" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="11" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="12" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="13" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="14" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="15" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="16" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="17" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="18" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="19" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="20" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="21" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="22" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="23" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="24" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            <div id="25" class="card"><img class="back-face" src="/client/static/img/card.jpg" alt="agent card">
+                <div class="text-on-card"></div>
+                <img class="front-face" src="/client/static/img/type-card.jpg" alt="type card"></div>
+            </div>
+        <div id="menu">
+            <table id="key-table">
                 <button onclick="showKeys()">Pokaż odpowiedzi</button>
-            <tr>
-                <td id="1"></td>
-                <td id="2"></td>
-                <td id="3"></td>
-                <td id="4"></td>
-                <td id="5"></td>
-            </tr>
-            <tr>
-                <td id="6"></td>
-                <td id="7"></td>
-                <td id="8"></td>
-                <td id="9"></td>
-                <td id="10"></td>
-            </tr>
-            <tr>
-                <td id="11"></td>
-                <td id="12"></td>
-                <td id="13"></td>
-                <td id="14"></td>
-                <td id="15"></td>
-            </tr>
-            <tr>
-                <td id="16"></td>
-                <td id="17"></td>
-                <td id="18"></td>
-                <td id="19"></td>
-                <td id="20"></td>
-            </tr>
-            <tr>
-                <td id="21"></td>
-                <td id="22"></td>
-                <td id="23"></td>
-                <td id="24"></td>
-                <td id="25"></td>
-            </tr>
-        </table>
-    </section>
-    </section>
+                <tr>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                    <td id="5"></td>
+                </tr>
+                <tr>
+                    <td id="6"></td>
+                    <td id="7"></td>
+                    <td id="8"></td>
+                    <td id="9"></td>
+                    <td id="10"></td>
+                </tr>
+                <tr>
+                    <td id="11"></td>
+                    <td id="12"></td>
+                    <td id="13"></td>
+                    <td id="14"></td>
+                    <td id="15"></td>
+                </tr>
+                <tr>
+                    <td id="16"></td>
+                    <td id="17"></td>
+                    <td id="18"></td>
+                    <td id="19"></td>
+                    <td id="20"></td>
+                </tr>
+                <tr>
+                    <td id="21"></td>
+                    <td id="22"></td>
+                    <td id="23"></td>
+                    <td id="24"></td>
+                    <td id="25"></td>
+                </tr>
+            </table>
+            <div id="chat">
+
+            </div>
+
+        </div>
+    </div>
     <script src="/client/static/scripts/script.js"></script>   
 </body>
 </html>
