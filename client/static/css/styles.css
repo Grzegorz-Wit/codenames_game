@@ -10,13 +10,13 @@ body {
     margin: 0 auto;
 	padding: 0;
     display: block;
-	width: 100vmax;
+	width: 100%;
     overflow: auto;
 }
 
 .game_window {
-    width: 80vmax;
-    height: 40vmax;
+    width: 60%;
+    height: 80vh;
     float: left;
 	overflow: hidden;
     margin:  auto;
@@ -50,7 +50,7 @@ from {
     font-size: 0;
 }
 to {
-    font-size: 8em;
+    font-size: 30px;
 }
 }
 
@@ -121,8 +121,10 @@ p {
 }
 
 #menu {
-    width: 30vh;
+    width: 30%;
+    height: 80vh;
     float: right;
+    margin: 0 5% 0 0 ;
 	overflow: hidden;
 }
 
@@ -136,7 +138,7 @@ table tr td {
 }
 
 button {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .red {
