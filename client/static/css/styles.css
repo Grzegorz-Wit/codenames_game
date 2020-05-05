@@ -9,14 +9,14 @@ body {
     background-image: url('/client/static/img/background.jpg');
     margin: 0 auto;
 	padding: 0;
-        display: block;
-	width: 1204px;
-        overflow: auto;
+    display: block;
+	width: 100vmax;
+    overflow: auto;
 }
 
 .game_window {
-    width: 90vh;
-    height: 90vh;
+    width: 80vmax;
+    height: 40vmax;
     float: left;
 	overflow: hidden;
     margin:  auto;
