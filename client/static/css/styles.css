@@ -18,7 +18,7 @@ body {
     width: 60%;
     height: 80vh;
     float: left;
-	/* overflow: hidden; */
+	overflow: hidden;
     margin:  auto 5vh;
     display: inline-flex;
     flex-wrap: wrap;
@@ -122,9 +122,8 @@ p {
 
 #menu {
     width: 30%;
-    height: 80vh;
+    height: 90vh;
     float: right;
-    /* margin: 0 5vh 0 0 ; */
 	overflow: hidden;
 }
 
@@ -139,6 +138,12 @@ table tr td {
 
 button {
     font-size: 2vw;
+}
+
+#show-keys {
+    width: 30%;
+    float: right;
+    overflow: hidden;
 }
 
 .red {
@@ -158,18 +163,46 @@ button {
 }
 
 #chat {
-    margin: 5vh 0 0 0;
-    height: 50vh;
+    height: 50%;
     width: 27vh;
     background-color: white;
     border: black solid 2px;
 }
 
 @media screen and (max-width: 800px) {
-    .game_window, #menu {
-        margin: auto;
-      width: 100%; 
+    button {
+        font-size: 5vw;
     }
+
+    .game_window{
+        height: 40vh;
+        margin: auto;
+        width: 100%; 
+      
+    }
+
+
+    #menu {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+
+    #key-table {
+        float: left;
+        width: 50%;
+    }
+
+    #chat {
+        float: right;
+        width: 50%;
+    }
+
+    .text-on-card {
+        font-size: 10px;
+    }
+
   }
 
 
