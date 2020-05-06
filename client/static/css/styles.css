@@ -41,7 +41,8 @@ body {
 
 .overlay-text.visible {
 display: flex;
-flex-direction: column;
+/* flex-direction: column; */
+height: 100%;
 animation: overlay-grow 500ms forwards;
 }
 
@@ -174,6 +175,10 @@ button {
         font-size: 5vw;
     }
 
+    .content {
+        height: 100%;
+    }
+
     .game_window{
         height: 40vh;
         margin: auto;
@@ -181,6 +186,15 @@ button {
       
     }
 
+    .front-face, .back-face {
+        padding: 2px;
+        border-radius: 10px;
+    }
+
+    .card:hover {
+        cursor: none;
+        border: none;
+    }
 
     #menu {
         display: inline-flex;
