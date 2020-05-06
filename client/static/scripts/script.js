@@ -47,8 +47,11 @@ function ng() {
 
 socket.on('ng', function() {
   cardsArray.forEach(card => card.setAttribute('class', 'card'))
-
-
+  var cells = Array.from(document.getElementsByTagName('td'));
+  cells.forEach(cell => {
+    cell.setAttribute('class', '')
+  });
+  document.getElementById('output').innerHTML = ('red team guessing').fontcolor('red');
 });
 
 
@@ -67,6 +70,7 @@ socket.on('keys table', keys => {
   var cells = Array.from(document.getElementsByTagName('td'));
   cells.forEach(cell => {
     cell.setAttribute('class', keys[cell.id-1])
+    socket.emit('uncovered keys');
   })
   });
 

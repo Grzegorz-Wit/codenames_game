@@ -109,6 +109,10 @@ io.sockets.on('connection', function(socket){
     socket.on('show keys', function() {
         socket.emit('keys table', (keysArray));
     });    
+
+    socket.on('uncovered keys', function() {
+        // socket.broadcast
+    })
 });
 
 
