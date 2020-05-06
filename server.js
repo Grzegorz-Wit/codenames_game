@@ -104,7 +104,6 @@ io.sockets.on('connection', function(socket){
 
     socket.on('join game', (data) => {
         socket.emit('words for game', (wordsArray));
-        socket.broadcast.emit('ng');
     });
 
     socket.on('show keys', function() {
