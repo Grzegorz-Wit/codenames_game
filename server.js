@@ -106,6 +106,12 @@ io.sockets.on('connection', function(socket){
         socket.emit('words for game', (wordsArray));
     });
 
+
+    socket.on('joined', (nickname) => {
+        console.log(nickname)
+        socket.broadcast.emit('user joined', (nickname));
+    });
+
     socket.on('show keys', function() {
         socket.emit('keys table', (keysArray));
     });    

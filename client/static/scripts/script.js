@@ -10,13 +10,23 @@ function queryCardData(self) {
   self.removeEventListener('click', function() {queryCardData(card)});
 }
 
-let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+let overlay = document.getElementById('startText')
 
-overlays.forEach(overlay => {
-  overlay.addEventListener('click', () => {
+function joinGame() {
     overlay.classList.remove('visible');
-    socket.emit('join game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});  });
-});
+    socket.emit('join game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});
+    // var nickname = document.getElementById('nickname').value;
+    // socket.emit('joined', (nickname));
+
+
+    // document.getElementById('chat').innerHTML = (nickname + 'dołączył');
+
+};
+
+socket.on('user joined'), (data) => {
+  console.log('ok');
+  // document.getElementById('chat').innerHTML = (nickname + 'dołączył');
+}
 
 cardsArray = document.querySelectorAll('div.card');
 document.getElementById('output').innerHTML = (player + ' team guessing').fontcolor(player);
@@ -37,13 +47,9 @@ socket.on('response', (data) => {
 });
 
 function newGame() {
-  socket.emit('new game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});
-  
+  socket.emit('new game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});  
 };
 
-function ng() {
-
-}
 
 socket.on('ng', function() {
   cardsArray.forEach(card => card.setAttribute('class', 'card'))
