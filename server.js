@@ -66,9 +66,11 @@ keysArray = [
     'assassin'
 ]
 
-keysArray = shuffle(keysArray);
 flippedCards = [];
 var SOCKET_LIST = {};
+
+keysArray = shuffle(keysArray);
+wordsArray = chooseWordsForCurrentGame();
 
 var io = require('socket.io')(serv,{});
 io.sockets.on('connection', function(socket){
@@ -98,11 +100,16 @@ io.sockets.on('connection', function(socket){
         flippedCards = [];
         socket.broadcast.emit('words for game', (wordsArray));
         socket.broadcast.emit('ng');
+    });
+
+    socket.on('join game', (data) => {
+        socket.emit('words for game', (wordsArray));
+        socket.broadcast.emit('ng');
+    });
 
     socket.on('show keys', function() {
         socket.emit('keys table', (keysArray));
     });    
-    });
 });
 
 

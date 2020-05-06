@@ -15,7 +15,7 @@ let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 overlays.forEach(overlay => {
   overlay.addEventListener('click', () => {
     overlay.classList.remove('visible');
-    socket.emit('new game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});  });
+    socket.emit('join game', function() {cardsArray.forEach(card => card.setAttribute('class', 'card'))});  });
 });
 
 cardsArray = document.querySelectorAll('div.card');
