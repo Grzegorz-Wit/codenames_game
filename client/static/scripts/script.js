@@ -18,15 +18,10 @@ function joinGame() {
     // var nickname = document.getElementById('nickname').value;
     // socket.emit('joined', (nickname));
 
-
     // document.getElementById('chat').innerHTML = (nickname + 'dołączył');
 
 };
 
-socket.on('user joined'), (data) => {
-  console.log('ok');
-  // document.getElementById('chat').innerHTML = (nickname + 'dołączył');
-}
 
 cardsArray = document.querySelectorAll('div.card');
 document.getElementById('output').innerHTML = (player + ' team guessing').fontcolor(player);
@@ -87,3 +82,39 @@ function showKeys() {
   socket.emit('show keys', function() {})
 }
 
+
+const name = prompt('Podaj swój nick')
+socket.emit('new-user', name)
+
+const messageContainer = document.getElementById('message-container')
+const messageForm = document.getElementById('send-container')
+const messageInput = document.getElementById('message-input')
+
+
+messageForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const message = messageInput.value
+  appendMessage('Ty: ' + message)
+  socket.emit('send-chat-message', message)
+  messageInput.value = ''
+})
+
+socket.on('user-connected', name => {
+  appendMessage(name + ' dołączył/a')
+})
+
+socket.on('user disconnected', name => {
+  appendMessage(name + ' rozłączył/a się')
+})
+
+socket.on('chat-message', data => {
+  appendMessage(data.name + ': ' + data.message)
+})
+
+function appendMessage(message) {
+  const messageElement = document.createElement('div')
+  messageElement.innerText = message
+  messageContainer.append(messageElement)
+}
+
+appendMessage('Dołączyłeś do gry')

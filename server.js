@@ -68,14 +68,15 @@ keysArray = [
 
 flippedCards = [];
 var SOCKET_LIST = {};
+const users = {}
 
 keysArray = shuffle(keysArray);
 wordsArray = chooseWordsForCurrentGame();
 
 var io = require('socket.io')(serv,{});
-io.sockets.on('connection', function(socket){
-    socket.id = Math.random();
-    SOCKET_LIST[socket.id] = socket;
+io.on('connection', function(socket){
+    // socket.id = Math.random();
+    // SOCKET_LIST[socket.id] = socket;
     console.log('connected');
 
 
@@ -85,12 +86,14 @@ io.sockets.on('connection', function(socket){
 
 
     socket.on('disconnect',function(){
+        socket.broadcast.emit('user disconnected', users[socket.id])
+        delete users[socket.id]
         delete SOCKET_LIST[socket.id];
         console.log('disconnected');
     });
 
     socket.on('card', (data) => {
-        socket.broadcast.emit('response', {team: keysArray[data-1], id: data});
+        io.sockets.emit('response', {team: keysArray[data-1], id: data});
         flippedCards.push(data);
     });
     socket.on('new game', (data) => {
@@ -98,26 +101,26 @@ io.sockets.on('connection', function(socket){
         keysArray = shuffle(keysArray);
         wordsArray = chooseWordsForCurrentGame();
         flippedCards = [];
-        socket.broadcast.emit('words for game', (wordsArray));
-        socket.broadcast.emit('ng');
+        io.sockets.emit('words for game', (wordsArray));
+        io.sockets.emit('ng');
     });
 
     socket.on('join game', (data) => {
         socket.emit('words for game', (wordsArray));
     });
 
-
-    socket.on('joined', (nickname) => {
-        console.log(nickname)
-        socket.broadcast.emit('user joined', (nickname));
-    });
-
     socket.on('show keys', function() {
         socket.emit('keys table', (keysArray));
     });    
 
-    socket.on('uncovered keys', function() {
-        // socket.broadcast
+
+    socket.on('new-user', name => {
+        users[socket.id] = name
+        socket.broadcast.emit('user-connected', name)
+    })
+
+    socket.on('send-chat-message', message => {
+        socket.broadcast.emit('chat-message', {message: message, name: users[socket.id] })
     })
 });
 

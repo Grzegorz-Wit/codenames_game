@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class="content">
-        <div id="startText" class="overlay-text visible">
+        <!-- <div id="startText" class="overlay-text visible"> -->
             <!-- <label for="nickname">Podaj nick:</label>
             <input type="text" id="nickname" name="nickname"> -->
-            <button onclick="joinGame()">Kliknij by dołączyć</button>
-        </div>
+            <!-- <button onclick="joinGame()">Kliknij by dołączyć</button>
+        </div> -->
         <div class="team">
             <button onclick="newGame()">Nowa Gra</button>
             <p id="output"></p>
@@ -137,9 +137,11 @@
                     <td id="25"></td>
                 </tr>
             </table>
-            <div id="chat">
-            </div>
-
+            <div id="message-container"></div>
+            <form id="send-container">
+                <input type="text" id="message-input">
+                <button type="submit" id="send-button">Send</button>
+            </form>
         </div>
     </div>
     <script src="/client/static/scripts/script.js"></script>   
